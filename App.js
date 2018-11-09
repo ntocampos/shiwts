@@ -11,7 +11,7 @@ const routes = {
 }
 
 const config = {
-  initialRouteName: 'Home',
+  initialRouteName: 'Details',
   // initialRouteParams: { imdbID: 'tt4116284' },
   navigationOptions: {
     header: null,
