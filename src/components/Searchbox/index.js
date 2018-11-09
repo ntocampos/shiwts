@@ -1,14 +1,13 @@
 import React from 'react'
-import { View, TextInput, Alert, Button } from 'react-native'
+import { View, TextInput, Button, Alert } from 'react-native'
 
 import styles from './styles'
 
 class Searchbox extends React.Component {
   state = { value: '' }
 
-  handleSubmit = (value) => Alert.alert(`Search button clicked w/ value "${value}"`)
-
   render() {
+    const { onSearch } = this.props
     const { value } = this.state
 
     return (
@@ -19,11 +18,11 @@ class Searchbox extends React.Component {
           value={value}
           autoCorrect={false}
           onChangeText={(text) => this.setState({ value: text })}
-          onSubmitEditing={() => this.handleSubmit(value)}
+          onSubmitEditing={() => onSearch(value)}
         />
         <Button
           title="Go!"
-          onPress={() => this.handleSubmit(value)}
+          onPress={() => onSearch(value)}
         />
       </View>
     )
