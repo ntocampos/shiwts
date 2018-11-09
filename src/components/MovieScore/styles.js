@@ -26,12 +26,12 @@ export default StyleSheet.create({
     justifyContent: 'space-around',
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 75,
+    height: 75,
   },
   finalScoreText: {
     fontSize: 18,
-    paddingVertical: 5,
+    paddingVertical: 0,
     paddingHorizontal: 15,
     textTransform: 'uppercase',
     borderWidth: 2,
