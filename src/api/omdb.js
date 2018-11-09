@@ -6,27 +6,31 @@ export default {
   search: async (query) => {
     const PATH = `${BASE_URL}&s=${query}`
     try {
-      const response = await fetch(PATH)
+      const raw = await fetch(PATH)
+      const response = await raw.json()
+
       if (response.Response === 'True') {
         return response.Search
       }
 
       throw new Error(response.Error)
     } catch(error) {
-      console.error(error)
+      throw error
     }
   },
-  find: (titleId) => {
+  find: async (titleId) => {
     const PATH = `${BASE_URL}&i=${titleId}`
     try {
-      const response = await fetch(PATH)
+      const raw = await fetch(PATH)
+      const response = await raw.json()
+
       if (response.Response === 'True') {
         return response
       }
 
       throw new Error(response.Error)
     } catch(error) {
-      console.error(error)
+      throw error
     }
   },
 }
